@@ -2,10 +2,12 @@ import { FormData } from "../types/form";
 import validAuth from "../static/auth.json";
 import { useNavigate } from "react-router-dom";
 
-const delay = () => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, 2000);
-  });
+const delay = () => new Promise(resolve => setTimeout(resolve, 2000))
+
+export const imit = async (data: any) => {
+  await delay();
+  const w = isValidAuth(data);
+  return w
 }
 
 export const isValidAuth = (data: FormData) => {

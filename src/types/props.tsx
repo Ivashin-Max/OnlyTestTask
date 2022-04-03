@@ -1,5 +1,4 @@
-export type FlexWraperProps = {
-  direction?: string,
-  justify?: string,
-  align?: string,
+export type TitleProps = {
+  textTransform?: string;
+  children?: React.ReactNode
 }

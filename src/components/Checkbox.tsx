@@ -1,8 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { InputProps, LabeledInputProps } from '../types/form';
+import styled from 'styled-components';
+import FlexWrapper from './FlexWrapper';
 
-const Checkbox = () => {
+const StyledLabel = styled.label<any>`
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding:3px;
+  background-color: ${props => props.checked ? '#4A67FF' : 'white'};
+  background-clip: content-box;
+  margin-right:0.875rem;
+`
+const StyledCheckbox = styled.input`
+  width:0px;
+  height:0px;
+`
+
+
+
+const Checkbox = ({ label, register, required, name }: InputProps) => {
+  const [checked, setChecked] = useState(false);
+
   return (
-    <div>Checkbox</div>
+    <label>
+      <FlexWrapper align='center'>
+        <StyledLabel checked={checked} />
+        <StyledCheckbox
+          type="checkbox"
+          {...register(label, { required })}
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+        />
+        <span>{name}</span>
+      </FlexWrapper>
+    </label>
   )
 }
 
