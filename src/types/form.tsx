@@ -13,7 +13,7 @@ export interface IFormValues {
 }
 
 export type InputProps = {
-  valid?: FieldError | undefined;
+  valid: string;
   name: string;
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;

@@ -13,13 +13,12 @@ const StyledInput = styled.input<InputProps>`
   height:3.75rem;
   background: #F5F5F5;
   border-radius: 8px;
-  border:none;
   padding:1.25rem;
   font-weight:400;
   color:black;
   outline:none;
   margin-bottom:1.25rem;
-
+  border:${({ valid }) => valid || 'none'};
 `
 
 

@@ -34,11 +34,11 @@ const Form = () => {
 
 
 
-      <LabeledInput label='login' type='text' register={register} name="Логин" required />
+      <LabeledInput label='login' type='text' register={register} name="Логин" required valid={'1px solid red'} />
       {errors.login && <p>{errors.login.message}</p>}
-      <LabeledInput label='password' type='password' register={register} name="Пароль" required />
+      <LabeledInput label='password' type='password' register={register} name="Пароль" required valid={'1px solid red'} />
       {errors.login && <p>{errors.login.message}</p>}
-      <Checkbox label='savePassword' register={register} name="Запомнить пароль" />
+      <Checkbox label='savePassword' register={register} name="Запомнить пароль" valid={'1px solid red'} />
       <button onClick={() => console.log(errors)}>sdfsdf</button>
       <Button name='Войти' />
     </StyledForm>
