@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import FlexWrapper from './components/FlexWrapper';
+import { fetch } from './actions/fetchImitation'
+import Header from './components/Header';
+import { Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
+import { RedirectToLogin } from './pages/RedirectToLogin';
 
-function App() {
+const AppWrapper = styled.div`
+  width:100%;
+  min-height:100vh;
+  padding:1rem;
+`
+
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <AppWrapper >
+      <FlexWrapper justify='center' direction='column' align='center'>
+        <Header />
+        <Routes>
+          <Route path="/" element={RedirectToLogin} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={RedirectToLogin} />
+        </Routes >
+        <button onClick={() => console.log(fetch({ login: '1', password: '2' }))}>+</button>
+      </FlexWrapper>
+    </AppWrapper >
   );
 }
 
