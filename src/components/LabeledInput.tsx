@@ -29,11 +29,12 @@ const LabeledInput = (props: InputProps) => {
 
   return (
     <>
-      <StyledLabel >{props.name}</StyledLabel>
+      <StyledLabel htmlFor={props.label}>{props.name}</StyledLabel>
       <StyledInput
         {...props.register(props.label, { required: 'Обязательное поле' })}
         type={props.type}
-        isValid={props.isValid} />
+        isValid={props.isValid}
+        id={props.label} />
 
     </>
   )

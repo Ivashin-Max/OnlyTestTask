@@ -13,6 +13,7 @@ import LabeledInput from './LabeledInput';
 
 const StyledForm = styled.form`
   width:40rem;
+  max-width:100%;
   height:21.125rem;
 `
 
@@ -36,18 +37,18 @@ const Form = () => {
     setDisabled(true);
     console.log(data)
 
-    // imitateFetch(data)
-    //   .then((response) => {
+    imitateFetch(data)
+      .then((response) => {
 
-    //     if (response.status === true) {
-    //       localStorage.setItem('login', response.data.login);
-    //       navigateTo('/profile');
-    //     }
-    //     else setFetchError(response.data.login);
-    //     reset();
-    setDisabled(false)
-    //   })
-    //   ;
+        if (response.status === true) {
+          localStorage.setItem('login', response.data.login);
+          navigateTo('/profile');
+        }
+        else setFetchError(response.data.login);
+        reset();
+        setDisabled(false)
+      })
+      ;
   };
 
 
