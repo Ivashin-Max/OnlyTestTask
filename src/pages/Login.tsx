@@ -8,9 +8,7 @@ const Login = () => {
 
   useEffect(() => {
     const authorized = checkLocalStorage('login');
-    console.log(authorized);
     if (authorized) navigate('/profile');
-
   }, [])
 
   return (

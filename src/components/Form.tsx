@@ -14,14 +14,14 @@ import LabeledInput from './LabeledInput';
 const StyledForm = styled.form`
   width:40rem;
   max-width:100%;
-  height:21.125rem;
+  min-height:21.125rem;
 `
 
-const StyledErrorMessage = styled.span`
+const StyledErrorInputMessage = styled.span`
   display:block;
   color: rgba(226, 111, 111, 1);
   font-size:0.875rem;
-  margin:0 0 20px;
+  margin:0 0 1.25rem;
   width:100%;
 `
 
@@ -35,11 +35,10 @@ const Form = () => {
   const onSubmit: SubmitHandler<IFormValues> = data => {
 
     setDisabled(true);
-    console.log(data)
+
 
     imitateFetch(data)
       .then((response) => {
-
         if (response.status === true) {
           localStorage.setItem('login', response.data.login);
           navigateTo('/profile');
@@ -48,7 +47,7 @@ const Form = () => {
         reset();
         setDisabled(false)
       })
-      ;
+
   };
 
 
@@ -63,7 +62,7 @@ const Form = () => {
         name="Логин"
         isValid={errors.login?.message}
       />
-      {errors.login && <StyledErrorMessage>{errors.login.message}</StyledErrorMessage>}
+      {errors.login && <StyledErrorInputMessage>{errors.login.message}</StyledErrorInputMessage>}
 
       <LabeledInput
         label='password'
@@ -72,7 +71,7 @@ const Form = () => {
         name="Пароль"
         isValid={errors.password?.message}
       />
-      {errors.password && <StyledErrorMessage>{errors.password.message}</StyledErrorMessage>}
+      {errors.password && <StyledErrorInputMessage>{errors.password.message}</StyledErrorInputMessage>}
 
       <Checkbox
         label='savePassword'

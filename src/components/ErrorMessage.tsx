@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import FlexWrapper from './FlexWrapper';
 
 const StyledErrorMessage = styled.div`
-  height:3.75rem;
+  min-height:3.75rem;
   background: #F5E9E9;
   border: 1px solid #E26F6F;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-radius: 8px;
   padding:1.25rem;
   font-weight:400;

@@ -1,6 +1,5 @@
 import { FormData } from "../types/form";
 import validAuth from "../static/auth.json";
-import { useNavigate } from "react-router-dom";
 
 const delay = () => new Promise(resolve => setTimeout(resolve, 2000));
 
