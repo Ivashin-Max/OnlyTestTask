@@ -25,12 +25,15 @@ const StyledInput = styled.input<Pick<InputProps, 'isValid'>>`
 `
 
 
-const LabeledInput = ({ label, register, type, name, isValid }: InputProps) => {
+const LabeledInput = (props: InputProps) => {
 
   return (
     <>
-      <StyledLabel >{name}</StyledLabel>
-      <StyledInput {...register(label, { required: 'Обязательное поле' })} type={type} isValid={isValid} />
+      <StyledLabel >{props.name}</StyledLabel>
+      <StyledInput
+        {...props.register(props.label, { required: 'Обязательное поле' })}
+        type={props.type}
+        isValid={props.isValid} />
 
     </>
   )

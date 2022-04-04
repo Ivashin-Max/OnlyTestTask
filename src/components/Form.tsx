@@ -60,7 +60,6 @@ const Form = () => {
         label='login'
         register={register}
         name="Логин"
-        required
         isValid={errors.login?.message}
       />
       {errors.login && <StyledErrorMessage>{errors.login.message}</StyledErrorMessage>}
@@ -70,7 +69,6 @@ const Form = () => {
         type='password'
         register={register}
         name="Пароль"
-        required
         isValid={errors.password?.message}
       />
       {errors.password && <StyledErrorMessage>{errors.password.message}</StyledErrorMessage>}
