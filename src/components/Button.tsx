@@ -27,6 +27,7 @@ const StyledButton = styled.button`
 
     &:disabled{
       background: rgba(153, 169, 255, 1);
+      cursor: default;
     }
 
 `

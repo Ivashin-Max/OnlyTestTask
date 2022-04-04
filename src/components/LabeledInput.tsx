@@ -19,6 +19,7 @@ const StyledInput = styled.input<Pick<InputProps, 'isValid'>>`
   border:none;
   ${(props) => props.isValid && `
         border: 1px solid #E26F6F;
+        color: #E26F6F;
     `}
 
 `

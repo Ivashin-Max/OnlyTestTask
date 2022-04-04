@@ -34,19 +34,20 @@ const Form = () => {
   const onSubmit: SubmitHandler<IFormValues> = data => {
 
     setDisabled(true);
+    console.log(data)
 
-    imitateFetch(data)
-      .then((response) => {
+    // imitateFetch(data)
+    //   .then((response) => {
 
-        if (response.status === true) {
-          localStorage.setItem('login', response.data.login);
-          navigateTo('/profile');
-        }
-        else setFetchError(response.data.login);
-        reset();
-        setDisabled(false)
-      })
-      ;
+    //     if (response.status === true) {
+    //       localStorage.setItem('login', response.data.login);
+    //       navigateTo('/profile');
+    //     }
+    //     else setFetchError(response.data.login);
+    //     reset();
+    setDisabled(false)
+    //   })
+    //   ;
   };
 
 

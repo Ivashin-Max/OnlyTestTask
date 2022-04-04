@@ -7,9 +7,9 @@ export type FormData = {
 }
 
 export interface IFormValues {
-  "login": string;
-  "password": string;
-  "savePassword": string;
+  login: string;
+  password: string;
+  savePassword: string;
 }
 
 export type InputProps = {
