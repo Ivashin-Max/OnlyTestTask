@@ -1,4 +1,4 @@
-import { InputProps } from '../types/form';
+import { InputProps, InputStyleProps } from '../types/form';
 import styled from 'styled-components';
 
 const StyledLabel = styled.label`
@@ -6,7 +6,7 @@ const StyledLabel = styled.label`
   margin-bottom:0.625rem;
 `
 
-const StyledInput = styled.input<any>`
+const StyledInput = styled.input<Pick<InputProps, 'isValid'>>`
   width:100%;
   height:3.75rem;
   background: #F5F5F5;
@@ -17,18 +17,19 @@ const StyledInput = styled.input<any>`
   outline:none;
   margin-bottom:0.75rem;
   border:none;
-  ${(props: InputProps) => props.valid === true && `
-      border:1px solid red;
+  ${(props) => props.isValid && `
+        border: 1px solid #E26F6F;
     `}
+
 `
 
 
-const LabeledInput = ({ label, register, type, name }: InputProps, props: InputProps) => {
+const LabeledInput = ({ label, register, type, name, isValid }: InputProps) => {
 
   return (
     <>
       <StyledLabel >{name}</StyledLabel>
-      <StyledInput {...register(label, { required: 'Обязательное поле' })} type={type || 'text'}{...props} />
+      <StyledInput {...register(label, { required: 'Обязательное поле' })} type={type} isValid={isValid} />
 
     </>
   )

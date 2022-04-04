@@ -13,7 +13,7 @@ export interface IFormValues {
 }
 
 export type InputProps = {
-  valid?: boolean;
+  isValid?: string;
   name: string;
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
@@ -27,7 +27,7 @@ export type LabelProps = {
 }
 
 export type InputStyleProps = {
-  valid: string;
+  isValid: boolean;
 };
 
 export type FormValues = {

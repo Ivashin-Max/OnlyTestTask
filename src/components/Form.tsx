@@ -55,13 +55,30 @@ const Form = () => {
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       {fetchError && <ErrorMessage ><span> Пользователя {fetchError}  не существует</span></ErrorMessage>}
 
-      <LabeledInput label='login' type='text' register={register} name="Логин" required valid={true} />
+      <LabeledInput
+        label='login'
+        register={register}
+        name="Логин"
+        required
+        isValid={errors.login?.message}
+      />
       {errors.login && <StyledErrorMessage>{errors.login.message}</StyledErrorMessage>}
 
-      <LabeledInput label='password' type='password' register={register} name="Пароль" required valid={false} />
+      <LabeledInput
+        label='password'
+        type='password'
+        register={register}
+        name="Пароль"
+        required
+        isValid={errors.password?.message}
+      />
       {errors.password && <StyledErrorMessage>{errors.password.message}</StyledErrorMessage>}
 
-      <Checkbox label='savePassword' register={register} name="Запомнить пароль" valid={true} />
+      <Checkbox
+        label='savePassword'
+        register={register}
+        name="Запомнить пароль"
+      />
       <Button primary disabled={disabled}>Войти</Button>
     </StyledForm>
 
