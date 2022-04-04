@@ -5,6 +5,9 @@ import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
+
+
+
 const GlobalStyle = createGlobalStyle`
 *{
   margin :0px;

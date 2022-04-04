@@ -8,7 +8,7 @@ const StyledLabel = styled.label`
   margin-bottom:0.625rem;
 `
 
-const StyledInput = styled.input<InputProps>`
+const StyledInput = styled.input`
   width:100%;
   height:3.75rem;
   background: #F5F5F5;
@@ -17,12 +17,13 @@ const StyledInput = styled.input<InputProps>`
   font-weight:400;
   color:black;
   outline:none;
-  margin-bottom:1.25rem;
-  border:${({ valid }) => valid || 'none'};
+  margin-bottom:0.75rem;
+  border:none;
+
 `
 
 
-const LabeledInput = ({ label, register, type, name, valid }: InputProps) => {
+const LabeledInput = ({ label, register, type, name }: InputProps) => {
 
   return (
     <>

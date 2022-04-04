@@ -9,7 +9,7 @@ const StyledFlexWrapper = styled.section<FlexWraperProps>`
   justify-content:${({ justify }) => justify || 'stretch'};
   align-items:${({ align }) => align || 'stretch'};
   width:100%;
-  /* height:100%; */
+  height:${(props: FlexWraperProps) => props.fullheight ? '100%' : 'auto'};
 `
 
 const FlexWrapper: React.FC<FlexWraperProps> = (props) => {

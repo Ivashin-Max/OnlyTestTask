@@ -4,20 +4,36 @@ import { ButtonProps } from '../types/form';
 
 const StyledButton = styled.button`
     display:block;
-    width:100%;
+    
     height:3.75rem;
-    background: #4A67FF;
+    cursor: pointer;
     border-radius: 8px;
     border:0;
     color: white;
     font-size: 1.125rem;
     font-weight:bold;
     margin-top:2.5rem;
+
+    ${(props: ButtonProps) => props.primary && `
+      width:100%;
+      background: #4A67FF;
+    `}
+
+    ${(props: ButtonProps) => props.secondary && `
+      width:12.5rem;
+      background: #F5F5F5;
+      color:black;
+    `}
+
+    &:disabled{
+      background: rgba(153, 169, 255, 1);
+    }
+
 `
 
 const Button = (props: ButtonProps) => {
   return (
-    <StyledButton type='submit'>{props.name}</StyledButton>
+    <StyledButton type='submit' {...props}>{props.children}</StyledButton>
   )
 }
 

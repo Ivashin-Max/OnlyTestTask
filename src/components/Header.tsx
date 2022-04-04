@@ -3,7 +3,10 @@ import Title from './Title'
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-
+position:fixed;
+width: 100%;
+top:2.5rem;
+left:0;
 `
 
 
