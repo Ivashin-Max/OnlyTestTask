@@ -5,7 +5,3 @@ export const checkLocalStorage = (item: string) => {
   if (neededItem) return neededItem;
   return
 }
-
-export const clearLocalStorage = () => {
-  localStorage.clear();
-}

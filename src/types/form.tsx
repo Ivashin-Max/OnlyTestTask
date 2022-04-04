@@ -1,4 +1,4 @@
-import { FieldError, FormState, Path, UseFormRegister } from "react-hook-form";
+import { FormState, Path, UseFormRegister } from "react-hook-form";
 
 export type FormData = {
   login: string,
@@ -13,7 +13,7 @@ export interface IFormValues {
 }
 
 export type InputProps = {
-  valid: string;
+  valid?: boolean;
   name: string;
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
@@ -21,9 +21,13 @@ export type InputProps = {
   type?: string;
   formState?: FormState<IFormValues>;
 };
+
+export type LabelProps = {
+  checked: boolean;
+}
+
 export type InputStyleProps = {
   valid: string;
-
 };
 
 export type FormValues = {

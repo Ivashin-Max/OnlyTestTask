@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { checkLocalStorage, clearLocalStorage } from '../actions/localStorage'
+import { checkLocalStorage } from '../actions/localStorage'
 import Button from '../components/Button'
 import Typography from '../components/Typography'
 
 const Profile = () => {
-  const [login, setLogin] = useState<null | string>(null)
+  const [login, setLogin] = useState('')
   const navigate = useNavigate();
 
   const handleExitClick = () => {
-    clearLocalStorage();
+    localStorage.clear();
     navigate('/login')
   }
 

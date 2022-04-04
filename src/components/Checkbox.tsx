@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { InputProps, LabeledInputProps } from '../types/form';
+import { InputProps, LabeledInputProps, LabelProps } from '../types/form';
 import styled from 'styled-components';
 import FlexWrapper from './FlexWrapper';
 
-const StyledLabel = styled.label<any>`
+const StyledLabel = styled.label<LabelProps>`
   width: 1.25rem;
   height: 1.25rem;
   border: 1px solid #000000;

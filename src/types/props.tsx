@@ -4,10 +4,13 @@ export type TitleProps = {
   children?: React.ReactNode
 }
 
-export type ErrorMessageProps = {
+export type ReactChildrenProp = {
   children: React.ReactNode
 }
 
-export type TypographyProps = {
-  children: React.ReactNode
+export type FlexWraperProps = {
+  direction?: string,
+  justify?: string,
+  align?: string,
+  fullheight?: boolean;
 }

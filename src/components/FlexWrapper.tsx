@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
-import { FlexWraperProps } from '../types/flex';
+import { FlexWraperProps } from '../types/props';
 
 
 const StyledFlexWrapper = styled.section<FlexWraperProps>`
-  display: inline-flex;
+  display: flex;
   flex-direction: ${({ direction }) => direction || 'row'};
   justify-content:${({ justify }) => justify || 'stretch'};
   align-items:${({ align }) => align || 'stretch'};
-  width:100%;
   height:${(props: FlexWraperProps) => props.fullheight ? '100%' : 'auto'};
 `
 

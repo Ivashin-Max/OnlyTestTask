@@ -1,6 +1,4 @@
-import React from 'react';
-import { useForm, useController, UseControllerProps } from 'react-hook-form';
-import { FormData, FormValues, InputProps, LabeledInputProps } from '../types/form';
+import { InputProps } from '../types/form';
 import styled from 'styled-components';
 
 const StyledLabel = styled.label`
@@ -8,7 +6,7 @@ const StyledLabel = styled.label`
   margin-bottom:0.625rem;
 `
 
-const StyledInput = styled.input`
+const StyledInput = styled.input<any>`
   width:100%;
   height:3.75rem;
   background: #F5F5F5;
@@ -19,16 +17,18 @@ const StyledInput = styled.input`
   outline:none;
   margin-bottom:0.75rem;
   border:none;
-
+  ${(props: InputProps) => props.valid === true && `
+      border:1px solid red;
+    `}
 `
 
 
-const LabeledInput = ({ label, register, type, name }: InputProps) => {
+const LabeledInput = ({ label, register, type, name }: InputProps, props: InputProps) => {
 
   return (
     <>
       <StyledLabel >{name}</StyledLabel>
-      <StyledInput {...register(label, { required: 'Обязательное поле' })} type={type ? type : 'text'} />
+      <StyledInput {...register(label, { required: 'Обязательное поле' })} type={type || 'text'}{...props} />
 
     </>
   )

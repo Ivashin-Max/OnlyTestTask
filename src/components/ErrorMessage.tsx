@@ -1,5 +1,5 @@
 import React from 'react'
-import { ErrorMessageProps } from '../types/props';
+import { ReactChildrenProp } from '../types/props';
 import styled from 'styled-components';
 import FlexWrapper from './FlexWrapper';
 
@@ -29,7 +29,7 @@ const StyledErrorIcon = styled.span`
   margin-right:0.875rem;
 `
 
-const ErrorMessage = (props: ErrorMessageProps) => {
+const ErrorMessage = (props: ReactChildrenProp) => {
   return (
     <StyledErrorMessage>
       <FlexWrapper align='center'>

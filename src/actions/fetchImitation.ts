@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 const delay = () => new Promise(resolve => setTimeout(resolve, 2000));
 
+const isValidAuth = (data: FormData) => {
+  if (data.login === validAuth.login && data.password === validAuth.password) return true
+  return false;
+}
+
 export const imitateFetch = async (data: FormData) => {
   await delay();
   const response = {
@@ -13,10 +18,5 @@ export const imitateFetch = async (data: FormData) => {
   return response
 }
 
-const isValidAuth = (data: FormData) => {
 
-  if (data.login === validAuth.login && data.password === validAuth.password) return true
-  return false;
-
-}
 
