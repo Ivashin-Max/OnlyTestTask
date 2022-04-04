@@ -6,12 +6,6 @@ const delay = () => new Promise(resolve => setTimeout(resolve, 2000));
 
 export const imitateFetch = (data: FormData) => {
 
-  const isValidAuth = (data: FormData) => {
-
-    if (data.login === validAuth.login && data.password === validAuth.password) return true
-    return false;
-
-  }
 
   return async () => {
     await delay();
@@ -24,5 +18,10 @@ export const imitateFetch = (data: FormData) => {
 
 }
 
+const isValidAuth = (data: FormData) => {
 
+  if (data.login === validAuth.login && data.password === validAuth.password) return true
+  return false;
+
+}
 
