@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ButtonProps } from '../types/form';
+import { ButtonProps } from '../types/props';
 
 const StyledButton = styled.button`
     display:block;

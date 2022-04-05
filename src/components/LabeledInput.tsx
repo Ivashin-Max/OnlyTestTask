@@ -1,4 +1,4 @@
-import { InputProps } from '../types/form';
+import { InputProps } from '../types/props';
 import styled from 'styled-components';
 
 const StyledLabel = styled.label`

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InputProps, LabelProps } from '../types/form';
+import { InputProps, LabelProps } from '../types/props';
 import styled from 'styled-components';
 import FlexWrapper from './FlexWrapper';
 
